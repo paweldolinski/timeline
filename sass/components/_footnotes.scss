@@ -1,0 +1,22 @@
+.footnotes {
+    overflow: hidden;
+    font-size: 14px;
+    
+    &__line {
+        width: 40%;
+        height: 2px;
+        background-color: $color-blue;
+    }
+}
+
+.right-panel--green {
+    .footnotes__line {
+        background-color: $color-green;
+    }
+}
+
+.right-panel--purple {
+    .footnotes__line {
+        background-color: $color-purple;
+    }
+}

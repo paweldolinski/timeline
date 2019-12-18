@@ -1,0 +1,347 @@
+.line {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+    
+    @media screen and (max-width: $breakpoint) {
+        width: 24%;
+        display: block;
+    }
+
+    &__heading {
+        width: 180px;
+        min-height: 1px;
+        text-align: right;
+        margin-right: 15px;
+        flex-shrink: 0;
+        transition: transform 0.3s;
+        
+        @media screen and (max-width: $breakpoint) {
+            width: 100%;
+            height: 48px;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        span {
+            border: solid 1px $color-blue;
+            background-color: $color-blue;
+            color: $color-white;
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            
+            @media screen and (max-width: $breakpoint) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding: 0;
+                max-width: 140px;
+                margin: auto;
+                background-color: transparent;
+                border: none;
+                border-top: solid 2px $color-blue;
+                border-bottom: solid 2px $color-blue;
+            }
+            
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__arrow {
+        width: 40px;
+        flex-shrink: 0;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        transition: transform 0.3s;
+        
+        @media screen and (max-width: $breakpoint) {
+            transform: rotate(90deg) !important;
+            margin: auto;
+        }
+
+        &:before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $color-blue;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-1px);
+        }
+        
+        &--top {
+            &:before {
+                display: none;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            right: -2px;
+            transform: translateY(-50%);
+            height: 13px;
+        }
+    }
+
+    &__line-wrapper {
+        width: 100%;
+        display: flex;
+        
+        @media screen and (max-width: $breakpoint) {
+            display: block;
+            height: 2000px;
+        }
+    }
+
+    &__segment {
+        width: 12.5%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        transition: transform 0.3s;
+        
+        @media screen and (max-width: $breakpoint) {
+            width: 100%;
+            height: 12.5%;
+            display: block;
+        }
+        
+        &--top {
+            height: 50px;
+            
+            @media screen and (max-width: $breakpoint) {
+                height: 12.5%;
+            }
+        }
+    }
+
+    &__part {
+        width: 8.333%;
+        height: 100%;
+        position: relative;
+        
+        @media screen and (max-width: $breakpoint) {
+            width: 100%;
+            height: 8.333%;
+            margin: auto;
+        }
+
+        &:before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $color-blue;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-1px);
+            
+            @media screen and (max-width: $breakpoint) {
+                width: 2px;
+                height: 100%;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 100%;
+            
+            @media screen and (max-width: $breakpoint) {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 15px;
+                    height: 100%;
+            }
+
+            path {
+                stroke: $color-blue;
+            }
+        }
+        
+        &[data-line="dot"] {
+            &:hover {
+                .line__part-popup {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__part-popup {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 10px;
+        padding: 15px;
+        background-color: $color-blue;
+        width: 150px;
+        font-weight: bold;
+        z-index: 999;
+        color: $color-black;
+        
+        &.active {
+            display: block;
+        }
+
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid $color-blue;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__part-popup-date {
+        margin-bottom: 5px;
+        color: $color-white;
+        text-transform: uppercase;
+    }
+    
+    &__part-popup-text {
+        margin-bottom: 5px;
+        
+    }
+    
+    &__part-popup-btn {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $color-white;
+        
+        &:hover {
+            color: $color-black;
+        }
+        
+        @media screen and (max-width: $breakpoint) {
+            font-size: 13px;
+        }
+    }
+    
+    &__part-panel {
+        display: none;
+    }
+    
+    .powerbr {
+        display: none;
+        
+        @media screen and (max-width: $breakpoint) {
+            display: block;
+        }
+    }
+    
+    &--green {
+        .line__heading span {
+            border-color: $color-green;
+            background-color: $color-green;
+            
+            &:hover {
+                background-color: transparent;
+            }
+            
+            @media screen and (max-width: $breakpoint) {
+                background-color: transparent;
+                border: none;
+                border-top: solid 2px $color-green;
+                border-bottom: solid 2px $color-green;
+            }
+        }
+        
+        .line__arrow {
+            &:before {
+                background-color: $color-green;
+            }
+            
+            polygon {
+                fill: $color-green;
+            }
+        }
+        
+        .line__part {
+            &:before {
+                background-color: $color-green;
+            }
+            
+            svg path {
+                stroke: $color-green;
+            }
+        }
+        
+        .line__part-popup {
+            background-color: $color-green;
+            
+            &:before {
+                border-top: 10px solid $color-green;
+            }
+        }
+    }
+    
+    &--purple {
+        .line__heading span {
+            border-color: $color-purple;
+            background-color: $color-purple;
+            
+            &:hover {
+                background-color: transparent;
+            }
+            
+            @media screen and (max-width: $breakpoint) {
+                background-color: transparent;
+                border: none;
+                border-top: solid 2px $color-purple;
+                border-bottom: solid 2px $color-purple;
+            }
+        }
+        
+        .line__arrow {
+            &:before {
+                background-color: $color-purple;
+            }
+            
+            polygon {
+                fill: $color-purple;
+            }
+        }
+        
+        .line__part {
+            &:before {
+                background-color: $color-purple;
+            }
+            
+            svg path {
+                stroke: $color-purple;
+            }
+        }
+        
+        .line__part-popup {
+            background-color: $color-purple;
+            
+            &:before {
+                border-top: 10px solid $color-purple;
+            }
+        }
+    }
+}

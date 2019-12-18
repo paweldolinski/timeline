@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-black;
+    color: $color-white;
+    margin: 0;
+    padding: 0;
+    font-family: 'GothamPro', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+    line-height: 1.5;
+    
+    @media screen and (max-width: 1300px) {
+        font-size: 14px;
+    }
+    
+    @media screen and (max-width: $breakpoint) {
+        font-size: 13px;
+    }
+    
+    &.blocked {
+        overflow: hidden;
+    }
+}
+
+p {
+    margin: 0 0 10px 0;
+}

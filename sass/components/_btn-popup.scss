@@ -1,0 +1,99 @@
+.btn-popup {
+    display: none;
+    width: 90%;
+    height: 92vh;
+    position: fixed;
+    top: calc(3vh);
+    left: 5vw;
+    color: $color-black;
+    z-index: 999999;
+    overflow: auto;
+    
+    @media screen and (max-width: $breakpoint) {
+        padding-top: 50px;
+    }
+    
+    &.opened {
+        display: block;
+    }
+    &__overlay {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        background-color: $color-black;
+        display: none;
+        
+        &.active {
+            display: block;
+        }
+    }
+    
+    &__wrapper {
+        background-color: $color-white;
+        padding: 15px;
+    }
+    
+    &__heading {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px 0 20px;
+    }
+    
+    &__date {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        left: 5vw;
+        width: 91vw;
+        height: 50px;
+        align-items: center;
+        padding-top: 10px;
+        padding-right: 1vw;
+        
+        @media screen and (max-width: $breakpoint) {
+            background-color: $color-black;
+        }
+        
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+        
+        path {
+            fill: $color-white;
+        }
+    }
+    
+    &__cross {
+        z-index: 99;
+        position: relative;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+    }
+    
+    &__cross-line {
+        width: 35px;
+        height: 2px;
+        background-color: $color-white;
+        position: absolute;
+        top: 10px;
+        
+        &:nth-child(1) {
+            transform: rotate(45deg);
+        }
+        
+        &:nth-child(2) {
+            transform: rotate(-45deg);
+        }
+    }
+}

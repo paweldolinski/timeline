@@ -1,0 +1,6 @@
+.lines {
+    @media screen and (max-width: $breakpoint) {
+        display: flex;
+        justify-content: space-between;
+    }
+}

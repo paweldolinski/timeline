@@ -1,0 +1,17 @@
+{
+  "name": "timeline",
+  "version": "1.0.0",
+  "description": "timeline",
+  "main": "jQuery-3-4-0.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacek Kubas",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {}
+}

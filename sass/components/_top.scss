@@ -1,0 +1,72 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8vh;
+    
+    @media screen and (max-width: $breakpoint) {
+        display: block;
+    }
+    
+    @media screen and (max-width: 360px) {
+        margin-bototm: 30px;
+    }
+    
+    &__logo {
+        width: 160px;
+        margin-right: 20px;
+        
+        @media screen and (max-width: $breakpoint) {
+            margin-bottom: 30px;
+            width: 140px;
+        }
+        
+        @media screen and (max-width: 360px) {
+            width: 120px;
+        }
+    }
+    
+    &__heading {
+        font-size: 32px;
+        text-transform: uppercase;
+        margin: 0;
+        margin-top: -12px;
+        
+        @media screen and (max-width: 1300px) {
+            font-size: 28px;
+            margin-top: -9px;
+        }
+        
+        @media screen and (max-width: $breakpoint) {
+            font-size: 20px;
+        }
+        
+        @media screen and (max-width: 360px) {
+            font-size: 16px;
+        }
+    }
+    
+    &__recommendations {
+        font-weight: bold;
+        border: solid 1px $color-white;
+        padding: 5px 15px;
+        transition: all 0.3s;
+        cursor: pointer;
+        color: $color-white;
+        text-decoration: none;
+        min-width: 144px;
+        flex-shrink: 0;
+        text-align: center;
+        
+        &:hover {
+            background-color: $color-white;
+            color: $color-black;
+        }
+        
+        @media screen and (max-width: $breakpoint) {
+            padding: 5px;
+            font-size: 12px;
+            display: none;
+        }
+    }
+}
